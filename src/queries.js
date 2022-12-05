@@ -1,7 +1,11 @@
-import {gql} from '@apollo/client';
+import { gql } from '@apollo/client';
 
-export const getCharacters = gql`{
-    characters {
+export const GET_CHARACTERS = gql`
+    query character($page: Int) {
+    characters(page: $page) {
+        info {
+            pages
+        }
         results {
             id
             name
